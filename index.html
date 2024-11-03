@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Cake Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Click the cake!</h1>
+        
+        <!-- Main Cake Image -->
+        <div id="cake-container" onclick="handleClick()">
+            <img id="cake-image" src="cake.png" alt="Pixel Art Cake" />
+            
+            <!-- Overlay Container for Lit Candles -->
+            <div id="candles-overlay"></div>
+
+            <div id="birthday-text">Happy Birthday Tavia!</div>
+        </div>
+        
+        <p>Candles Lit: <span id="click-counter">0</span></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
