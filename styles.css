@@ -7,11 +7,17 @@ body {
     background-color: #222;
     color: white;
     font-family: Helvetica, sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 #game-container {
     text-align: center;
     position: relative;
+    width: 100%;
+    max-width: 700px; /* Limits width on larger screens */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #cake-container {
@@ -21,7 +27,8 @@ body {
 }
 
 #cake-image {
-    width: 700px; /* Adjust as needed */
+    width: 100%; /* Responsive width */
+    max-width: 700px; /* Original width for larger screens */
 }
 
 #candles-overlay {
@@ -32,28 +39,27 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 100;
-    pointer-events: none;
 }
 
 .lit-candle {
     position: absolute;
     width: 70px; /* Adjust based on candle size */
     height: 70px;
-    background-image: url('light.png'); /* Image for a lit candle */
+    background-image: url('light.png');
     background-size: cover;
-    transition: opacity 1s; /* Fade out effect */
+    transition: opacity 1s;
 }
 
 .blow-out {
-    opacity: 0; /* Fade out candles */
+    opacity: 0;
 }
 
 #birthday-text {
-    display: none; /* Hidden initially */
+    display: none;
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to exact center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 3rem;
     color: yellow;
     animation: fadeIn 2s ease-in-out;
@@ -64,7 +70,24 @@ body {
          1px  1px 0px black;
 }
 
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+    #cake-image {
+        max-width: 90%; /* Scale down cake image on smaller screens */
+    }
+
+    .lit-candle {
+        width: 40px; /* Adjust candle size for mobile */
+        height: 40px;
+    }
+
+    #birthday-text {
+        font-size: 2rem; /* Smaller font size on mobile */
+    }
 }
